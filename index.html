@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WpCrypto - Accept Crypto Payments Directly Into Your Wallet</title>
+    <meta name="description"
+        content="No middleman. No fees. No delays. Start accepting Bitcoin, Ethereum, USDT & more in your WooCommerce store today.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+        }
+
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 28px;
+            background: linear-gradient(135deg, #7C3AED 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #7C3AED 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(124, 58, 237, 0.8);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .crypto-icon {
+            font-size: 80px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                    <i data-lucide="coins" class="w-6 h-6 text-white"></i>
+                </div>
+                <span class="logo-text">WpCrypto</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="hover:text-cyan-400 transition">Features</a>
+                <a href="#pricing" class="hover:text-cyan-400 transition">Pricing</a>
+                <a href="#comparison" class="hover:text-cyan-400 transition">Comparison</a>
+                <a href="#faq" class="hover:text-cyan-400 transition">FAQ</a>
+                <a href="#buy"
+                    class="bg-cyan-500 text-white px-6 py-2 rounded-lg hover:bg-cyan-600 transition glow-button">Get
+                    Started</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-effect px-6 py-4 space-y-4">
+            <a href="#features" class="block hover:text-cyan-400 transition">Features</a>
+            <a href="#pricing" class="block hover:text-cyan-400 transition">Pricing</a>
+            <a href="#comparison" class="block hover:text-cyan-400 transition">Comparison</a>
+            <a href="#faq" class="block hover:text-cyan-400 transition">FAQ</a>
+            <a href="#buy"
+                class="block bg-cyan-500 text-white px-6 py-2 rounded-lg hover:bg-cyan-600 transition text-center">Get
+                Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center max-w-6xl">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Accept Crypto Payments<br>
+                    <span class="gradient-text">Directly Into Your Wallet</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                    No middleman. No fees. No delays. Start accepting Bitcoin, Ethereum, USDT & more in your WooCommerce
+                    store today.
+                </p>
+            </div>
+
+            <!-- Key Benefit Pills -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <div class="glass-effect px-6 py-3 rounded-full border-2 border-emerald-500 flex items-center gap-2">
+                    <i data-lucide="shield-off" class="w-5 h-5"></i>
+                    <span class="text-lg font-semibold">0% Transaction Fees</span>
+                </div>
+                <div class="glass-effect px-6 py-3 rounded-full border-2 border-cyan-500 flex items-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span class="text-lg font-semibold">Instant to Your Wallet</span>
+                </div>
+                <div class="glass-effect px-6 py-3 rounded-full border-2 border-purple-500 flex items-center gap-2">
+                    <i data-lucide="lock" class="w-5 h-5"></i>
+                    <span class="text-lg font-semibold">100% Decentralized</span>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="mb-12 fade-in flex justify-center items-center gap-8">
+                <div class="crypto-icon float-animation">₿</div>
+                <div class="crypto-icon float-animation" style="animation-delay: 0.5s;">Ξ</div>
+                <div class="crypto-icon float-animation" style="animation-delay: 1s;">💎</div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <a href="#buy"
+                    class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:from-purple-700 hover:to-blue-700 transition glow-button">
+                    Buy Pro Version - $79
+                </a>
+                <a href="#buy"
+                    class="border-2 border-cyan-500 text-cyan-500 px-8 py-4 rounded-lg text-lg font-bold hover:bg-cyan-500 hover:text-white transition">
+                    Try Manual Version - $29
+                </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-8 text-gray-300 fade-in">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                    <span>4.9/5 from 500+ stores</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    <span>Secure & Open Source</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                    <span>1000+ Active Installations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Pain Points Section -->
+    <section class="py-20 px-6 bg-slate-900/50">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in">
+                Tired of <span class="gradient-text">Losing Money</span> to Payment Processors?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Traditional Payment Processors -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="x-circle" class="w-8 h-8 text-red-400"></i>
+                        <h3 class="text-2xl font-bold text-red-400">Traditional Processors</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>2-3% transaction fees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Hold your funds for days</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Risk of chargebacks</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Account freezes & bans</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Complex KYC requirements</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Other Crypto Gateways -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="alert-triangle" class="w-8 h-8 text-yellow-400"></i>
+                        <h3 class="text-2xl font-bold text-yellow-400">Other Crypto Gateways</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Custody of your funds</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Hidden withdrawal fees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Monthly subscription costs</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Conversion to fiat (fees again!)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>Complicated integration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WpCrypto Solution -->
+                <div class="glass-effect p-8 rounded-xl border-2 border-emerald-500 card-hover fade-in pulse-glow">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-emerald-400"></i>
+                        <h3 class="text-2xl font-bold text-emerald-400">WpCrypto Solution ⭐</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Zero transaction fees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Instant to your wallet</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>No chargebacks possible</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>You control everything</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>5-minute setup</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in">
+                Simple Setup, <span class="gradient-text">Powerful Results</span>
+            </h2>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center fade-in glass-effect p-6 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="download" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-cyan-500 mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-3">Install Plugin</h3>
+                    <p class="text-gray-300">Upload and activate in WordPress. No coding required.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center fade-in glass-effect p-6 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="wallet" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-cyan-500 mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-3">Configure Wallets</h3>
+                    <p class="text-gray-300">Add your crypto wallet addresses for BTC, ETH, USDT, BNB etc.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center fade-in glass-effect p-6 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="credit-card" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-cyan-500 mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-3">Customer Pays</h3>
+                    <p class="text-gray-300">Customer selects crypto at checkout, sends payment to YOUR wallet</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center fade-in glass-effect p-6 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-cyan-500 mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-3">Auto-Verify</h3>
+                    <p class="text-gray-300">Pro: Blockchain auto-verification. Manual: You confirm payment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section id="features" class="py-20 px-6 bg-slate-900/50">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in">
+                Powerful <span class="gradient-text">Features</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Multi-Currency Support</h3>
+                    </div>
+                    <p class="text-gray-300">Accept BTC, ETH, BNB, USDT (ERC20, BEP20, TRC20) and any custom tokens</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Zero Transaction Fees</h3>
+                    </div>
+                    <p class="text-gray-300">100% of payment goes directly to your wallet. No middleman, no cuts.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Instant Settlement</h3>
+                    </div>
+                    <p class="text-gray-300">Funds arrive in your wallet immediately. No waiting, no holds.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Non-Custodial</h3>
+                    </div>
+                    <p class="text-gray-300">You control your private keys. We never touch your money.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">QR Code & Copy Button</h3>
+                    </div>
+                    <p class="text-gray-300">Mobile-friendly payment page with QR scanner and one-click address copy</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Auto-Verification (Pro)</h3>
+                    </div>
+                    <p class="text-gray-300">Blockchain API integration verifies payments automatically via Etherscan,
+                        BscScan, TronGrid</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Fraud-Proof</h3>
+                    </div>
+                    <p class="text-gray-300">No chargebacks. Blockchain transactions are final and immutable.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Works With Any Currency</h3>
+                    </div>
+                    <p class="text-gray-300">Display prices in USD, EUR, or any WooCommerce currency. Crypto value
+                        auto-calculated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Comparison Section -->
+    <section id="pricing" class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in">
+                Choose Your <span class="gradient-text">Version</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Manual Version -->
+                <div class="glass-effect p-8 rounded-xl card-hover fade-in">
+                    <h3 class="text-3xl font-bold mb-2">MANUAL VERSION</h3>
+                    <div class="text-5xl font-bold text-cyan-500 mb-4">$29</div>
+                    <p class="text-gray-300 mb-6">Perfect for small stores & testing</p>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Multi-crypto support (BTC, ETH, USDT, BNB)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Custom wallet addresses</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>QR code generation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>"I Paid" button confirmation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Manual admin verification</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Zero transaction fees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span>Lifetime updates</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-red-500 mt-1"></i>
+                            <span>No blockchain auto-verification</span>
+                        </li>
+                    </ul>
+
+                    <a href="#buy"
+                        class="flex items-center justify-center gap-2 w-full bg-cyan-500 text-white py-4 rounded-lg font-bold hover:bg-cyan-600 transition">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        Buy Manual - $29
+                    </a>
+                </div>
+
+                <!-- Pro Version -->
+                <div
+                    class="glass-effect p-8 rounded-xl border-4 border-purple-500 card-hover fade-in relative overflow-hidden pulse-glow">
+                    <div
+                        class="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-bl-xl font-bold flex items-center gap-2">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        RECOMMENDED
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2 mt-8">PRO VERSION</h3>
+                    <div class="text-5xl font-bold text-purple-400 mb-4">$79</div>
+                    <p class="text-gray-300 mb-6">Best for serious merchants</p>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">Everything in Manual, PLUS:</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">Automatic blockchain verification</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">Etherscan API integration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">BscScan API integration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">TronGrid API integration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">Real-time transaction monitoring</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">Auto-complete orders</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-500 mt-1"></i>
+                            <span class="font-bold">Priority support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#buy"
+                        class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-lg font-bold hover:from-purple-700 hover:to-blue-700 transition glow-button text-lg">
+                        <i data-lucide="crown" class="w-5 h-5"></i>
+                        Buy Pro - $79
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Comparison Table -->
+    <section id="comparison" class="py-20 px-6 bg-slate-900/50">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in">
+                Detailed <span class="gradient-text">Feature Comparison</span>
+            </h2>
+
+            <div class="overflow-x-auto fade-in">
+                <table class="w-full glass-effect rounded-xl">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="p-4 text-left text-lg">Feature</th>
+                            <th class="p-4 text-center text-lg">Manual ($29)</th>
+                            <th class="p-4 text-center text-lg bg-purple-900/30">Pro ($79)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">Multi-Cryptocurrency Support</td>
+                            <td class="p-4 text-center"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                            <td class="p-4 text-center bg-purple-900/20"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">QR Code Payment Page</td>
+                            <td class="p-4 text-center"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                            <td class="p-4 text-center bg-purple-900/20"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 bg-purple-900/10">
+                            <td class="p-4 font-bold">Automatic Blockchain Verification</td>
+                            <td class="p-4 text-center"><i data-lucide="x" class="w-6 h-6 text-red-500 mx-auto"></i>
+                            </td>
+                            <td class="p-4 text-center bg-purple-900/20"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 bg-purple-900/10">
+                            <td class="p-4 font-bold">Etherscan API Integration</td>
+                            <td class="p-4 text-center"><i data-lucide="x" class="w-6 h-6 text-red-500 mx-auto"></i>
+                            </td>
+                            <td class="p-4 text-center bg-purple-900/20"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 bg-purple-900/10">
+                            <td class="p-4 font-bold">Auto-Complete Orders</td>
+                            <td class="p-4 text-center"><i data-lucide="x" class="w-6 h-6 text-red-500 mx-auto"></i>
+                            </td>
+                            <td class="p-4 text-center bg-purple-900/20"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">Zero Transaction Fees</td>
+                            <td class="p-4 text-center"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                            <td class="p-4 text-center bg-purple-900/20"><i data-lucide="check"
+                                    class="w-6 h-6 text-emerald-500 mx-auto"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4">Support</td>
+                            <td class="p-4 text-center">Email</td>
+                            <td class="p-4 text-center bg-purple-900/20 font-bold">Priority</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in">
+                Frequently Asked <span class="gradient-text">Questions</span>
+            </h2>
+
+            <div class="space-y-4 fade-in">
+                <!-- FAQ 1 -->
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <button
+                        class="faq-question w-full p-6 text-left flex items-center justify-between hover:bg-slate-800/50 transition">
+                        <span class="font-bold text-lg">Do I need a crypto exchange account?</span>
+                        <i data-lucide="plus" class="w-6 h-6 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300">
+                        No! Payments go directly to your personal wallet. You control the private keys.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <button
+                        class="faq-question w-full p-6 text-left flex items-center justify-between hover:bg-slate-800/50 transition">
+                        <span class="font-bold text-lg">What's the difference between Manual and Pro?</span>
+                        <i data-lucide="plus" class="w-6 h-6 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300">
+                        Manual requires you to check blockchain explorer and confirm payments. Pro auto-verifies using
+                        free blockchain APIs.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <button
+                        class="faq-question w-full p-6 text-left flex items-center justify-between hover:bg-slate-800/50 transition">
+                        <span class="font-bold text-lg">Are there any hidden fees?</span>
+                        <i data-lucide="plus" class="w-6 h-6 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300">
+                        Zero fees. You pay once for the plugin, no monthly costs, no transaction fees ever.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <button
+                        class="faq-question w-full p-6 text-left flex items-center justify-between hover:bg-slate-800/50 transition">
+                        <span class="font-bold text-lg">What cryptocurrencies are supported?</span>
+                        <i data-lucide="plus" class="w-6 h-6 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300">
+                        BTC, ETH, BNB, USDT (ERC20, BEP20, TRC20), and you can add any custom token.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <button
+                        class="faq-question w-full p-6 text-left flex items-center justify-between hover:bg-slate-800/50 transition">
+                        <span class="font-bold text-lg">Can I upgrade from Manual to Pro later?</span>
+                        <i data-lucide="plus" class="w-6 h-6 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300">
+                        Yes! Contact us for upgrade pricing (usually difference + small fee).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="buy" class="py-20 px-6 bg-gradient-to-br from-purple-900 via-slate-900 to-blue-900">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+                Start Accepting Crypto Payments <span class="gradient-text">Today</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 fade-in">
+                Join 1000+ merchants who keep 100% of their revenue
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-12 fade-in">
+                <a href="mailto:contact@talhajaved.com?subject=Purchase%20WpCrypto%20Pro%20Version"
+                    class="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-5 rounded-lg text-xl font-bold hover:from-purple-700 hover:to-blue-700 transition glow-button">
+                    <i data-lucide="crown" class="w-6 h-6"></i>
+                    Get Pro Version - $79
+                </a>
+                <a href="mailto:contact@talhajaved.com?subject=Purchase%20WpCrypto%20Manual%20Version"
+                    class="flex items-center gap-3 bg-cyan-500 text-white px-10 py-5 rounded-lg text-xl font-bold hover:bg-cyan-600 transition">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    Start with Manual - $29
+                </a>
+            </div>
+
+            <!-- Guarantee Badge -->
+            <div class="glass-effect inline-flex items-center gap-3 px-8 py-4 rounded-xl mb-8 fade-in">
+                <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i>
+                <p class="text-lg font-bold text-emerald-400">30-Day Money-Back Guarantee</p>
+            </div>
+
+            <!-- Security Badges -->
+            <div class="flex flex-wrap justify-center gap-8 text-gray-300 fade-in">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="lock" class="w-5 h-5"></i>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>Instant Delivery</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="infinity" class="w-5 h-5"></i>
+                    <span>Lifetime Updates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-slate-950">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="coins" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="logo-text">WpCrypto</span>
+                    </div>
+                    <p class="text-gray-400">The #1 non-custodial crypto payment gateway for WooCommerce</p>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition">Support</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:contact@talhajaved.com"
+                                class="hover:text-cyan-400 transition">contact@talhajaved.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 WpCrypto. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                lucide.createIcons();
+            });
+        }
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-icon');
+
+                answer.classList.toggle('hidden');
+
+                // Update icon
+                if (answer.classList.contains('hidden')) {
+                    icon.setAttribute('data-lucide', 'plus');
+                } else {
+                    icon.setAttribute('data-lucide', 'minus');
+                }
+                lucide.createIcons();
+            });
+        });
+
+        // Fade-in on Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
