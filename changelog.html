@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - WpCrypto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+        }
+
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 28px;
+            background: linear-gradient(135deg, #0073aa 0%, #f7931a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 115, 170, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .version-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .badge-new {
+            background: #10b981;
+            color: white;
+        }
+
+        .badge-improved {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .badge-fixed {
+            background: #f59e0b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
+                    <i data-lucide="coins" class="w-6 h-6 text-white"></i>
+                </div>
+                <span class="logo-text">WpCrypto</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Changelog Content -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-5xl font-bold mb-6 text-slate-800">Changelog</h1>
+            <p class="text-xl text-slate-600 mb-12">Track all updates and improvements to WpCrypto</p>
+
+            <div class="space-y-8">
+                <!-- Version 2.0.0 -->
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-blue-600">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-3xl font-bold text-slate-800">Version 2.0.0</h2>
+                        <span class="text-slate-500">January 15, 2025</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="version-badge badge-new mb-2">NEW</span>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-slate-700">
+                                <li>Pro Version with automatic blockchain verification</li>
+                                <li>Etherscan API integration for ETH and ERC20 tokens</li>
+                                <li>BscScan API integration for BNB and BEP20 tokens</li>
+                                <li>TronGrid API integration for USDT TRC20</li>
+                                <li>Real-time transaction monitoring</li>
+                                <li>Auto-complete orders upon payment confirmation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="version-badge badge-improved mb-2">IMPROVED</span>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-slate-700">
+                                <li>Enhanced QR code generation for better mobile scanning</li>
+                                <li>Improved payment page UI/UX</li>
+                                <li>Better error handling and user feedback</li>
+                                <li>Optimized exchange rate fetching</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="version-badge badge-fixed mb-2">FIXED</span>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-slate-700">
+                                <li>Payment amount calculation accuracy</li>
+                                <li>Mobile responsiveness issues</li>
+                                <li>Compatibility with latest WooCommerce version</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version 1.5.0 -->
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-emerald-600">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-3xl font-bold text-slate-800">Version 1.5.0</h2>
+                        <span class="text-slate-500">December 1, 2024</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="version-badge badge-new mb-2">NEW</span>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-slate-700">
+                                <li>Added USDT TRC20 support</li>
+                                <li>Custom token support for advanced users</li>
+                                <li>Payment expiry timer option</li>
+                                <li>Email notifications for pending payments</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="version-badge badge-improved mb-2">IMPROVED</span>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-slate-700">
+                                <li>Faster exchange rate updates</li>
+                                <li>Better admin order management interface</li>
+                                <li>Enhanced security measures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version 1.0.0 -->
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-orange-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-3xl font-bold text-slate-800">Version 1.0.0</h2>
+                        <span class="text-slate-500">October 1, 2024</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="version-badge badge-new mb-2">INITIAL RELEASE</span>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-slate-700">
+                                <li>Bitcoin (BTC) payment support</li>
+                                <li>Ethereum (ETH) payment support</li>
+                                <li>USDT ERC20 and BEP20 support</li>
+                                <li>BNB payment support</li>
+                                <li>QR code generation for easy payments</li>
+                                <li>Copy wallet address button</li>
+                                <li>Manual payment verification</li>
+                                <li>"I Paid" button for customers</li>
+                                <li>Admin payment confirmation system</li>
+                                <li>Real-time crypto exchange rates</li>
+                                <li>Zero transaction fees</li>
+                                <li>Non-custodial (direct to your wallet)</li>
+                                <li>Multi-currency support (USD, EUR, etc.)</li>
+                                <li>Mobile-responsive payment page</li>
+                                <li>WooCommerce integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Features -->
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-purple-600">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="rocket" class="w-8 h-8 text-purple-600"></i>
+                        <h2 class="text-3xl font-bold text-slate-800">Upcoming Features</h2>
+                    </div>
+                    <p class="text-slate-600 mb-4">We're constantly working to improve WpCrypto. Here's what's coming
+                        next:</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700 ml-4">
+                        <li>Lightning Network support for Bitcoin</li>
+                        <li>Polygon (MATIC) support</li>
+                        <li>Solana (SOL) support</li>
+                        <li>Stablecoin auto-conversion option</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Multi-signature wallet support</li>
+                        <li>Partial payment detection</li>
+                        <li>Refund automation tools</li>
+                        <li>White-label payment page customization</li>
+                        <li>Subscription payment support</li>
+                    </ul>
+                </div>
+
+                <!-- Feature Requests -->
+                <div class="glass-effect p-8 rounded-xl border-2 border-blue-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="lightbulb" class="w-8 h-8 text-blue-600"></i>
+                        <h2 class="text-3xl font-bold text-slate-800">Request a Feature</h2>
+                    </div>
+                    <p class="text-slate-700 mb-6">Have an idea for a new feature? We'd love to hear from you! Your
+                        feedback helps us make WpCrypto better.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="support.html"
+                            class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            Submit Feature Request
+                        </a>
+                        <a href="contact-sales.html"
+                            class="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition font-semibold">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            Request Custom Development
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-slate-100">
+        <div class="container mx-auto text-center text-slate-600">
+            <p>&copy; 2025 WpCrypto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

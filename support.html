@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - WpCrypto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+        }
+
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 28px;
+            background: linear-gradient(135deg, #0073aa 0%, #f7931a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 115, 170, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
+                    <i data-lucide="coins" class="w-6 h-6 text-white"></i>
+                </div>
+                <span class="logo-text">WpCrypto</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Support Content -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h1 class="text-5xl font-bold mb-6 text-slate-800">Support Center</h1>
+            <p class="text-xl text-slate-600 mb-12">Get help with WpCrypto plugin</p>
+
+            <!-- Support Options -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Email Support -->
+                <div class="glass-effect p-8 rounded-xl hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-600 to-orange-500 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3 text-slate-800">Email Support</h2>
+                    <p class="text-slate-600 mb-4">Get help via email. We respond within 24 hours.</p>
+                    <a href="mailto:contact@talhajaved.com"
+                        class="inline-flex items-center gap-2 text-blue-600 hover:text-orange-500 font-semibold">
+                        contact@talhajaved.com
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Documentation -->
+                <div class="glass-effect p-8 rounded-xl hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-600 to-orange-500 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3 text-slate-800">Documentation</h2>
+                    <p class="text-slate-600 mb-4">Find answers in our detailed documentation.</p>
+                    <a href="documentation.html"
+                        class="inline-flex items-center gap-2 text-blue-600 hover:text-orange-500 font-semibold">
+                        Read Documentation
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="glass-effect p-8 rounded-xl mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-slate-800 flex items-center gap-3">
+                    <i data-lucide="link" class="w-8 h-8 text-blue-600"></i>
+                    Quick Links
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <a href="documentation.html#installation"
+                        class="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-50 transition">
+                        <i data-lucide="download" class="w-5 h-5 text-blue-600"></i>
+                        <span class="text-slate-700">Installation Guide</span>
+                    </a>
+                    <a href="documentation.html#configuration"
+                        class="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-50 transition">
+                        <i data-lucide="settings" class="w-5 h-5 text-blue-600"></i>
+                        <span class="text-slate-700">Configuration Help</span>
+                    </a>
+                    <a href="documentation.html#troubleshooting"
+                        class="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-50 transition">
+                        <i data-lucide="alert-circle" class="w-5 h-5 text-blue-600"></i>
+                        <span class="text-slate-700">Troubleshooting</span>
+                    </a>
+                    <a href="contact-sales.html"
+                        class="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-50 transition">
+                        <i data-lucide="phone" class="w-5 h-5 text-blue-600"></i>
+                        <span class="text-slate-700">Contact Sales</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="glass-effect p-8 rounded-xl">
+                <h2 class="text-3xl font-bold mb-6 text-slate-800 flex items-center gap-3">
+                    <i data-lucide="help-circle" class="w-8 h-8 text-orange-500"></i>
+                    Common Questions
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border-b border-slate-200 pb-4">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">How do I install the plugin?</h3>
+                        <p class="text-slate-600">Go to WordPress Admin → Plugins → Add New → Upload Plugin. Select the
+                            ZIP file and activate.</p>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border-b border-slate-200 pb-4">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">Where do I add my wallet addresses?</h3>
+                        <p class="text-slate-600">Navigate to WooCommerce → Settings → Payments → WpCrypto → Manage. Add
+                            your wallet addresses for each cryptocurrency.</p>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border-b border-slate-200 pb-4">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">How do I get API keys for Pro version?</h3>
+                        <p class="text-slate-600">Visit Etherscan.io, BscScan.com, and TronGrid.io to create free
+                            accounts and generate API keys. See our documentation for detailed steps.</p>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="border-b border-slate-200 pb-4">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">Can I test the plugin before buying?</h3>
+                        <p class="text-slate-600">Contact our sales team for a demo or trial period. We'll help you
+                            evaluate if WpCrypto is right for your store.</p>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="border-b border-slate-200 pb-4">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">What if I need custom features?</h3>
+                        <p class="text-slate-600">We offer custom development services. Contact sales to discuss your
+                            specific requirements.</p>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="pb-4">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">Do you offer setup assistance?</h3>
+                        <p class="text-slate-600">Yes! We offer basic and full setup services. Select your preference
+                            when contacting sales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Ticket Form -->
+            <div class="glass-effect p-8 rounded-xl mt-12">
+                <h2 class="text-3xl font-bold mb-6 text-slate-800 flex items-center gap-3">
+                    <i data-lucide="message-square" class="w-8 h-8 text-blue-600"></i>
+                    Submit Support Request
+                </h2>
+                <form id="supportForm" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">Your Name *</label>
+                        <input type="text" name="name" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">Email Address *</label>
+                        <input type="email" name="email" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">Plugin Version</label>
+                        <select name="version"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="">Select version</option>
+                            <option value="manual">Manual Version</option>
+                            <option value="pro">Pro Version</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">Issue Category *</label>
+                        <select name="category" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="">Select category</option>
+                            <option value="installation">Installation Issue</option>
+                            <option value="configuration">Configuration Help</option>
+                            <option value="payment">Payment Not Working</option>
+                            <option value="api">API Configuration</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">Describe Your Issue *</label>
+                        <textarea name="message" rows="6" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="Please provide as much detail as possible..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-blue-600 to-orange-500 text-white py-4 rounded-lg text-lg font-bold hover:from-blue-700 hover:to-orange-600 transition shadow-lg flex items-center justify-center gap-3">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Submit Support Request
+                    </button>
+                </form>
+            </div>
+
+            <!-- Priority Support -->
+            <div class="glass-effect p-8 rounded-xl mt-12 border-2 border-orange-500">
+                <div class="flex items-start gap-4">
+                    <i data-lucide="crown" class="w-12 h-12 text-orange-500"></i>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-3 text-slate-800">Need Priority Support?</h2>
+                        <p class="text-slate-600 mb-4">Pro version customers get priority support with faster response
+                            times and dedicated assistance.</p>
+                        <a href="contact-sales.html"
+                            class="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition font-semibold">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            Upgrade to Pro
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-slate-100">
+        <div class="container mx-auto text-center text-slate-600">
+            <p>&copy; 2025 WpCrypto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('supportForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            let emailBody = 'WpCrypto Support Request\n\n';
+            emailBody += `Name: ${data.name}\n`;
+            emailBody += `Email: ${data.email}\n`;
+            emailBody += `Version: ${data.version || 'Not specified'}\n`;
+            emailBody += `Category: ${data.category}\n\n`;
+            emailBody += `Issue Description:\n${data.message}\n`;
+
+            const subject = encodeURIComponent('WpCrypto Support Request - ' + data.category);
+            const body = encodeURIComponent(emailBody);
+            const mailtoLink = `mailto:contact@talhajaved.com?subject=${subject}&body=${body}`;
+
+            window.location.href = mailtoLink;
+            alert('Thank you! Your email client will open with your support request.');
+        });
+    </script>
+</body>
+
+</html>
