@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Sales - WpCrypto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+        }
+
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 28px;
+            background: linear-gradient(135deg, #0073aa 0%, #f7931a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 115, 170, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
+                    <i data-lucide="coins" class="w-6 h-6 text-white"></i>
+                </div>
+                <span class="logo-text">WpCrypto</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-3xl">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-slate-800">Contact Our Sales Team</h1>
+                <p class="text-xl text-slate-600">Tell us about your business needs and we'll get back to you within 24
+                    hours</p>
+            </div>
+
+            <div class="glass-effect p-8 md:p-12 rounded-2xl">
+                <form id="salesForm" class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="user" class="w-4 h-4 inline mr-2"></i>Full Name *
+                        </label>
+                        <input type="text" name="name" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="John Doe">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="mail" class="w-4 h-4 inline mr-2"></i>Email Address *
+                        </label>
+                        <input type="email" name="email" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="john@example.com">
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="phone" class="w-4 h-4 inline mr-2"></i>Phone Number
+                        </label>
+                        <input type="tel" name="phone"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="+1 (555) 000-0000">
+                    </div>
+
+                    <!-- Company/Website -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="globe" class="w-4 h-4 inline mr-2"></i>Website URL *
+                        </label>
+                        <input type="url" name="website" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="https://yourstore.com">
+                    </div>
+
+                    <!-- Version Interest -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="package" class="w-4 h-4 inline mr-2"></i>Which Version Are You Interested
+                            In? *
+                        </label>
+                        <select name="version" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="">Select a version</option>
+                            <option value="manual">Manual Version</option>
+                            <option value="pro">Pro Version (Recommended)</option>
+                            <option value="not-sure">Not sure yet</option>
+                        </select>
+                    </div>
+
+                    <!-- Cryptocurrencies -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="coins" class="w-4 h-4 inline mr-2"></i>Which Cryptocurrencies Do You Want to
+                            Accept? *
+                        </label>
+                        <div class="grid grid-cols-2 gap-3 mb-3">
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="checkbox" name="crypto" value="BTC" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">Bitcoin (BTC)</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="checkbox" name="crypto" value="ETH" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">Ethereum (ETH)</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="checkbox" name="crypto" value="USDT-ERC20" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">USDT (ERC20)</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="checkbox" name="crypto" value="USDT-TRC20" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">USDT (TRC20)</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="checkbox" name="crypto" value="BNB" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">BNB (Binance)</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="checkbox" name="crypto" value="other" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">Other (specify below)</span>
+                            </label>
+                        </div>
+                        <input type="text" name="crypto-other"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="Other cryptocurrencies you need...">
+                    </div>
+
+                    <!-- Monthly Transaction Volume -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="trending-up" class="w-4 h-4 inline mr-2"></i>Expected Monthly Transaction
+                            Volume *
+                        </label>
+                        <select name="volume" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="">Select expected volume</option>
+                            <option value="0-1000">$0 - $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000-50000">$10,000 - $50,000</option>
+                            <option value="50000+">$50,000+</option>
+                        </select>
+                    </div>
+
+                    <!-- Business Type -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="briefcase" class="w-4 h-4 inline mr-2"></i>Type of Business *
+                        </label>
+                        <select name="business-type" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="">Select business type</option>
+                            <option value="ecommerce">E-commerce Store</option>
+                            <option value="digital-products">Digital Products</option>
+                            <option value="saas">SaaS/Software</option>
+                            <option value="services">Professional Services</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Current Payment Processor -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="credit-card" class="w-4 h-4 inline mr-2"></i>Current Payment Processor (if
+                            any)
+                        </label>
+                        <input type="text" name="current-processor"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="e.g., PayPal, Stripe, None">
+                    </div>
+
+                    <!-- Timeline -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>When Do You Want to Start? *
+                        </label>
+                        <select name="timeline" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="">Select timeline</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="1-2-weeks">Within 1-2 weeks</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="just-exploring">Just exploring</option>
+                        </select>
+                    </div>
+
+                    <!-- Additional Requirements -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="message-square" class="w-4 h-4 inline mr-2"></i>Additional Requirements or
+                            Questions
+                        </label>
+                        <textarea name="message" rows="5"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                            placeholder="Tell us more about your specific needs, any custom features you require, or questions you have..."></textarea>
+                    </div>
+
+                    <!-- Support Options -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700">
+                            <i data-lucide="headphones" class="w-4 h-4 inline mr-2"></i>Do You Need Setup Assistance? *
+                        </label>
+                        <div class="space-y-2">
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="support" value="self" class="w-4 h-4 text-blue-600" required>
+                                <span class="text-slate-700">I can set it up myself</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="support" value="basic" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">Basic setup assistance needed</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50">
+                                <input type="radio" name="support" value="full" class="w-4 h-4 text-blue-600">
+                                <span class="text-slate-700">Full setup and configuration service</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-orange-500 text-white py-4 rounded-lg text-lg font-bold hover:from-blue-700 hover:to-orange-600 transition shadow-lg flex items-center justify-center gap-3">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Submit Request
+                        </button>
+                        <p class="text-sm text-slate-500 text-center mt-4">We'll respond within 24 hours</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mt-12 text-center">
+                <p class="text-slate-600 mb-4">Or contact us directly:</p>
+                <a href="mailto:contact@talhajaved.com"
+                    class="inline-flex items-center gap-2 text-blue-600 hover:text-orange-500 font-semibold text-lg">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    contact@talhajaved.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-slate-100">
+        <div class="container mx-auto text-center text-slate-600">
+            <p>&copy; 2025 WpCrypto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('salesForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(e.target);
+            const data = {};
+
+            // Get all form values
+            for (let [key, value] of formData.entries()) {
+                if (key === 'crypto') {
+                    if (!data[key]) data[key] = [];
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            // Create email body
+            let emailBody = 'New Sales Inquiry from WpCrypto\n\n';
+            emailBody += `Name: ${data.name}\n`;
+            emailBody += `Email: ${data.email}\n`;
+            emailBody += `Phone: ${data.phone || 'Not provided'}\n`;
+            emailBody += `Website: ${data.website}\n`;
+            emailBody += `Version Interest: ${data.version}\n`;
+            emailBody += `Cryptocurrencies: ${data.crypto ? data.crypto.join(', ') : 'None selected'}\n`;
+            if (data['crypto-other']) emailBody += `Other Crypto: ${data['crypto-other']}\n`;
+            emailBody += `Expected Volume: ${data.volume}\n`;
+            emailBody += `Business Type: ${data['business-type']}\n`;
+            emailBody += `Current Processor: ${data['current-processor'] || 'None'}\n`;
+            emailBody += `Timeline: ${data.timeline}\n`;
+            emailBody += `Setup Assistance: ${data.support}\n`;
+            if (data.message) emailBody += `\nAdditional Info:\n${data.message}\n`;
+
+            // Create mailto link
+            const subject = encodeURIComponent('WpCrypto Sales Inquiry from ' + data.name);
+            const body = encodeURIComponent(emailBody);
+            const mailtoLink = `mailto:contact@talhajaved.com?subject=${subject}&body=${body}`;
+
+            // Open mail client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            alert('Thank you! Your email client will open with your inquiry. Please send the email to complete your request.');
+        });
+    </script>
+</body>
+
+</html>
